@@ -1,5 +1,6 @@
 import React from "react";
 import { Column } from "./components/Column";
+import { AddNewItem } from "./components/AddNewItem";
 import { Card } from "./components/Card";
 import { AppContainer } from "./styles";
 
@@ -12,6 +13,7 @@ function App() {
       <Column text="In Progress">
         <Card text="Read Sapiens" />
       </Column>
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
 }

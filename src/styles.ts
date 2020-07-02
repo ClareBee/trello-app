@@ -45,7 +45,7 @@ export const NewItemInput = styled.input`
 `;
 
 interface AddItemButtonProps {
-  dark?: string;
+  dark?: boolean;
 }
 
 export const AddItemButton = styled.button<AddItemButtonProps>`
