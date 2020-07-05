@@ -1,44 +1,23 @@
 import React from "react";
+import { useAppState } from "./AppStateContext";
 import { Column } from "./components/Column";
 import { AddNewItem } from "./components/AddNewItem";
-import { Card } from "./components/Card";
 import { AppContainer } from "./styles";
 
-interface State {
-  count: number;
-}
+const App = () => {
+  const { state, dispatch } = useAppState();
 
-type Action =
-  | {
-      type: "increment";
-    }
-  | {
-      type: "decrement";
-    };
-
-const counterReducer = (state: State, action: Action) => {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
-    default:
-      throw new Error();
-  }
-};
-
-function App() {
   return (
     <AppContainer>
-      <Column text="To Do">
-        <Card text="Learn TypeScript" />
-      </Column>
-      <Column text="In Progress">
-        <Card text="Read Sapiens" />
-      </Column>
-      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
+      {state.lists.map((list, i) => (
+        <Column id={list.id} text={list.text} key={list.id} index={i} />
+      ))}
+      <AddNewItem
+        toggleButtonText="+ Add another list"
+        onAdd={(text) => dispatch({ type: "ADD_LIST", payload: text })}
+      />
     </AppContainer>
   );
-}
+};
 
 export default App;
