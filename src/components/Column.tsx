@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { useDrop } from "react-dnd";
 import { useAppState } from "../AppStateContext";
 import { AddNewItem } from "./AddNewItem";
-import { useItemDrag } from "../useDragItem";
+import { useItemDrag } from "../useItemDrag";
 import { DragItem } from "../dragItem";
 import { isHidden } from "../utils/isHidden";
 import { Card } from "./Card";
@@ -13,13 +13,14 @@ interface ColumnProps {
   text: string;
   index: number;
   id: string;
+  isPreview?: boolean;
 }
 
 /* type React.PropsWithChildren<P> = P & { 
     children?: React.ReactNode;
 } // type intersection w P as generic type
 */
-export const Column = ({ text, index, id }: ColumnProps) => {
+export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
   const { state, dispatch } = useAppState();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -42,7 +43,8 @@ export const Column = ({ text, index, id }: ColumnProps) => {
   return (
     <ColumnContainer
       ref={ref}
-      isHidden={isHidden(state.draggedItem, "COLUMN", id)}
+      isHidden={isHidden(isPreview, state.draggedItem, "COLUMN", id)}
+      isPreview={isPreview}
     >
       <ColumnTitle>{text}</ColumnTitle>
       {state.lists[index].tasks.map((task, i) => (
