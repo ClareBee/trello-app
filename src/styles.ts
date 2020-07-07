@@ -15,16 +15,6 @@ export const ColumnTitle = styled.div`
   font-weight: bold;
 `;
 
-export const CardContainer = styled.div`
-  background-color: #fff;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  max-width: 300px;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
-`;
-
 export const NewItemInput = styled.input`
   border-radius: 3px;
   border: none;
@@ -90,6 +80,16 @@ export const ColumnContainer = styled(DragPreviewContainer)`
   border-radius: 3px;
   padding: 8px 8px;
   flex-grow: 0;
+`;
+
+export const CardContainer = styled(DragPreviewContainer)`
+  background-color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  max-width: 300px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
 `;
 
 // pointer-events none to ignore all mouse events
