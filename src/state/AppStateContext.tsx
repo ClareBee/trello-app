@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
 import { nanoid } from "nanoid";
-import { save } from "./api";
-import { findItemIndexById } from "./utils/findItemByIndex";
-import { moveItem } from "./moveItem";
-import { DragItem } from "./dragItem";
+import { save } from "../api";
+import { findItemIndexById } from "../utils/findItemByIndex";
+import { moveItem } from "../utils/moveItem";
+import { DragItem } from "../components/DragItem";
 import { withData } from "./withData";
 
 interface Task {
@@ -152,7 +152,9 @@ export const AppStateProvider = withData(
     children,
     initialState,
   }: React.PropsWithChildren<{ initialState: AppState }>) => {
-    const [state, dispatch] = useReducer(appStateReducer, initialState);
+    const initialData = initialState.lists.length > 0 ? initialState : appData;
+
+    const [state, dispatch] = useReducer(appStateReducer, initialData);
 
     useEffect(() => {
       save(state);

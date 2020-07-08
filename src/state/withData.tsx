@@ -5,7 +5,7 @@ import React, {
   PropsWithChildren,
 } from "react";
 import { AppState } from "./AppStateContext";
-import { load } from "./api";
+import { load } from "../api";
 
 export const withData = (
   WrappedComponent: ComponentType<PropsWithChildren<{ initialState: AppState }>>

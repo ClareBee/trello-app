@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { useDrop } from "react-dnd";
-import { CardDragItem } from "../dragItem";
-import { useAppState } from "../AppStateContext";
-import { useItemDrag } from "../useItemDrag";
+import { CardDragItem } from "./DragItem";
+import { useAppState } from "../state/AppStateContext";
+import { useItemDrag } from "../utils/useItemDrag";
 import { isHidden } from "../utils/isHidden";
 
 import { CardContainer } from "../styles";

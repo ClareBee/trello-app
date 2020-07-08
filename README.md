@@ -1,12 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Trello Clone
 
 In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
+Runs the app in development mode, kicking off the backend service on localhost:4000
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ---

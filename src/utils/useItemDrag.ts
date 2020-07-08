@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDrag } from "react-dnd";
 import { getEmptyImage } from "react-dnd-html5-backend";
-import { useAppState } from "./AppStateContext";
-import { DragItem } from "./dragItem";
+import { useAppState } from "../state/AppStateContext";
+import { DragItem } from "../components/DragItem";
 
 // item - data about dragged item
 // begin - called when dragging starts

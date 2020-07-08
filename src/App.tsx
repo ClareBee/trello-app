@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppState } from "./AppStateContext";
+import { useAppState } from "./state/AppStateContext";
 import { Column } from "./components/Column";
 import { AddNewItem } from "./components/AddNewItem";
 import { CustomDragLayer } from "./components/CustomDragLayer";

@@ -5,6 +5,7 @@ export const AppContainer = styled.div`
   background-color: #3179ba;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   height: 100%;
   padding: 20px;
   width: 100%;

@@ -1,10 +1,10 @@
 // same for TS as import * as React from 'react'
 import React, { useRef } from "react";
 import { useDrop } from "react-dnd";
-import { useAppState } from "../AppStateContext";
+import { useAppState } from "../state/AppStateContext";
 import { AddNewItem } from "./AddNewItem";
-import { useItemDrag } from "../useItemDrag";
-import { DragItem } from "../dragItem";
+import { useItemDrag } from "../utils/useItemDrag";
+import { DragItem } from "./DragItem";
 import { isHidden } from "../utils/isHidden";
 import { Card } from "./Card";
 import { ColumnContainer, ColumnTitle } from "../styles";
