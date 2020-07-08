@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/trello-backend/node_modules
+/trello-backend/dist
 # testing
 /coverage
 
